@@ -123,10 +123,10 @@ boxplot(my.data$Sales~ my.data$Urban*my.data$US, las=2, cex.axis=0.7, xlab='', m
 ![Boxplot Sales vs Urban and US RPlot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/7fbf8e82-fe4c-479b-85c0-da7bbf5c5996)
 
 Interactions seem to be not significant. Why? <br>
-Consider a mosaicplot to see the frequencies of <br>
+Consider a mosaicplot to see the frequencies of observations from a couple of factors.<br>
 
 ![Mosaicplot Urban vs US Rplot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/b3879a32-3957-4245-a925-112c154e81d6)
-observations from a couple of factors.<br>
+<br>
 
 mosaicplot(table(my.data$Urban, my.data$US), main='Urban vs US') <br>
 
