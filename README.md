@@ -101,7 +101,7 @@ plot(my.data$Price, my.data$Sales, cex.lab=1.2, xlab='Price', ylab='Sales') <br>
 points(my.data$Price[my.data$ShelveLoc=='Bad'], my.data$Sales[my.data$ShelveLoc=='Bad'], col='red')<br>
 points(my.data$Price[my.data$ShelveLoc=='Good'], my.data$Sales[my.data$ShelveLoc=='Good'], col='green') <br>
 points(my.data$Price[my.data$ShelveLoc=='Medium'], my.data$Sales[my.data$ShelveLoc=='Medium'], col='orange') <br>
-legend('bottomleft', col=c('red', 'green', 'orange'), pch=c(19,19, 19), legend=c('ShelveLoc=Bad','ShelveLoc=Good','ShelveLoc=Medium'),bty='n',cex=0.8)<br>
+legend('bottomleft', col=c('red', 'green', 'orange'), pch=c(19,19, 19),legend=c('ShelveLoc=Bad','ShelveLoc=Good','ShelveLoc=Medium'),bty='n',cex=0.8)<br>
 
 ![Dispersion plot Sales Price with ShelveLoc factor RPlot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/d9159358-5f56-4a93-adef-ef371cfe26e5)
 
