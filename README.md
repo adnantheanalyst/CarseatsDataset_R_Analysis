@@ -14,7 +14,7 @@ dim(Carseats)
  [1] 400 11
 <!---variables-->
 
-names(Carseats)
+names(Carseats) <br>
 [1] "Sales" "CompPrice" "Income" "Advertising" "Population" "Price"
 [7] "ShelveLoc" "Age" "Education" "Urban" "US"
 
