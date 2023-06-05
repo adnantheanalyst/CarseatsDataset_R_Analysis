@@ -2,41 +2,41 @@
 Dataset Carseats contains the information about 400 carseats. Data are included in
 package ISLR.
 
-##upload library ISLR
+<!---upload library ISLR-->
 
 library(ISLR)
 
-##and the dataset
+<!---and the dataset-->
 data(Carseats)
 
-## dimension of the data
+<!---dimension of the data-->
 dim(Carseats)
-## [1] 400 11
-## variables
+ [1] 400 11
+<!---variables-->
 
 names(Carseats)
-## [1] "Sales" "CompPrice" "Income" "Advertising" "Population" "Price"
-## [7] "ShelveLoc" "Age" "Education" "Urban" "US"
+[1] "Sales" "CompPrice" "Income" "Advertising" "Population" "Price"
+[7] "ShelveLoc" "Age" "Education" "Urban" "US"
 
 Extract the variables of interest, namely, Sales, Price, Urban, US, ShelveLoc.
 
 my.data <- Carseats[, c('Sales', 'Price', 'Urban', 'US', 'ShelveLoc')]
 my.data[1:3,]
 
-## Sales Price Urban US ShelveLoc
-## 1 9.50 120 Yes Yes Bad
-## 2 11.22 83 Yes Yes Good
-## 3 10.06 80 Yes Yes Medium
+Sales Price Urban US ShelveLoc
+1 9.50 120 Yes Yes Bad
+2 11.22 83 Yes Yes Good
+3 10.06 80 Yes Yes Medium
 
 summary(my.data)
 
-## Sales Price Urban US ShelveLoc
-## Min. : 0.000 Min. : 24.0 No :118 No :142 Bad : 96
-## 1st Qu.: 5.390 1st Qu.:100.0 Yes:282 Yes:258 Good : 85
-## Median : 7.490 Median :117.0 Medium:219
-## Mean : 7.496 Mean :115.8
-## 3rd Qu.: 9.320 3rd Qu.:131.0
-## Max. :16.270 Max. :191.0
+Sales Price Urban US ShelveLoc
+Min. : 0.000 Min. : 24.0 No :118 No :142 Bad : 96
+1st Qu.: 5.390 1st Qu.:100.0 Yes:282 Yes:258 Good : 85
+Median : 7.490 Median :117.0 Medium:219
+Mean : 7.496 Mean :115.8
+3rd Qu.: 9.320 3rd Qu.:131.0
+Max. :16.270 Max. :191.0
 
 There are no missing data.
 Check whether factors are read correctly.
