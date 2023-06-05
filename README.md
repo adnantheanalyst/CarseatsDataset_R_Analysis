@@ -3,13 +3,17 @@ Dataset Carseats contains the information about 400 carseats. Data are included 
 package ISLR.
 
 ##upload library ISLR
+
 library(ISLR)
+
 ##and the dataset
 data(Carseats)
+
 ## dimension of the data
 dim(Carseats)
 ## [1] 400 11
 ## variables
+
 names(Carseats)
 ## [1] "Sales" "CompPrice" "Income" "Advertising" "Population" "Price"
 ## [7] "ShelveLoc" "Age" "Education" "Urban" "US"
@@ -54,9 +58,11 @@ boxplot(my.data$Sales, col='grey', ylab='Sales', cex.lab=1.2)
 
 ![Histogram Sales Rplot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/f5d99f1a-dd8e-46b1-a99c-c465f70645c9)
 
+
 plot(my.data$Price, my.data$Sales, cex.lab=1.2, xlab='Price', ylab='Sales')
 
 ![Dispersion Plot Sales   Price Rplot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/68de7d6b-8a28-4c9a-ad51-4647d8002933)
+
 
 It seems there is an inverse relationship.
 
@@ -89,8 +95,7 @@ legend=c('Urban=Yes','Urban=No'))
 
 ![Dispersion Plot Sales   Price Rplot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/172bf853-6617-4d56-ab96-59da8fccef22)
 
-The partial overlapping of the observations belonging to the two groups suggests that
-there would not be interactions between the covariates.
+The partial overlapping of the observations belonging to the two groups suggests that there would not be interactions between the covariates.
 Dispersion plot according to the levels of US
 
 plot(my.data$Price, my.data$Sales, cex.lab=1.2, xlab='Price', ylab='Sales')
@@ -98,7 +103,6 @@ points(my.data$Price[my.data$US=='Yes'], my.data$Sales[my.data$US=='Yes'], col='
 points(my.data$Price[my.data$US=='No'], my.data$Sales[my.data$US=='No'], col='green')
 legend('bottomleft', col=c('red','green'), pch=c(19,19),
 legend=c('US=Yes','US=No'))
-
 
 
 ![Dispersion plot Sales Price with US factor RPlot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/56d76f9b-44e6-438e-a9f6-b05503c506e6)
@@ -119,7 +123,7 @@ bty='n', cex=0.8)
 
 ![Dispersion plot Sales Price with ShelveLoc factor RPlot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/d9159358-5f56-4a93-adef-ef371cfe26e5)
 
-How can we interpret the plot?
+How can we interpret the plot? 
 Variations of Sales with respect to two factors.
 
 boxplot(my.data$Sales~ my.data$US*my.data$ShelveLoc, las=2, cex.axis=0.7,
@@ -145,7 +149,6 @@ Consider a mosaicplot to see the frequencies of![Mosaicplot Urban vs US Rplot](h
 
 mosaicplot(table(my.data$Urban, my.data$US), main='Urban vs US')
 
-
 ![Mosaicplot Urban vs US Rplot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/41df7905-265d-4cc0-a741-6d9ffff44be4)
 
 
@@ -153,11 +156,12 @@ mosaicplot(table(my.data$Urban, my.data$ShelveLoc), main='Urban vs ShelveLoc')
 
 ![Mosaicplot Urban vs ShelveLoc Rplot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/17e2e3bb-aa91-4823-87e4-54d9b241849a)
 
+
+
 mosaicplot(table(my.data$US, my.data$ShelveLoc), main='US vs ShelveLoc')
 
-
-
 ![Mosaicplot US vs ShelveLoc Rplot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/adea3320-026e-4b30-bcd6-011a9410d0e4)
+
 
 No relevant variations.
 Estimate the multiple linear regression model, for the moment inserting the interactions
