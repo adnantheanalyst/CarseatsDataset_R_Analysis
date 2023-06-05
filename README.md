@@ -10,9 +10,9 @@ data(Carseats)<br>
 <br>
 dimension of the data<br>
 dim(Carseats)<br>
-<br> [1] 400 11
-<br>variables
+[1] 400 11 <br> 
 
+variables <br>
 names(Carseats) <br>
 [1] "Sales" "CompPrice" "Income" "Advertising" "Population" "Price" <br>
 [7] "ShelveLoc" "Age" "Education" "Urban" "US" <br>
