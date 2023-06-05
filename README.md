@@ -2,9 +2,9 @@
 Dataset Carseats contains the information about 400 carseats. Data are included in
 package ISLR.
 
-#upload library ISLR
+--upload library ISLR
 library(ISLR)
-## and the dataset
+--and the dataset
 data(Carseats)
 ## dimension of the data
 dim(Carseats)
