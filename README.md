@@ -89,6 +89,64 @@ legend=c('Urban=Yes','Urban=No'))
 
 ![Dispersion Plot Sales   Price Rplot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/172bf853-6617-4d56-ab96-59da8fccef22)
 
+The partial overlapping of the observations belonging to the two groups suggests that
+there would not be interactions between the covariates.
+Dispersion plot according to the levels of US
+
+plot(my.data$Price, my.data$Sales, cex.lab=1.2, xlab='Price', ylab='Sales')
+points(my.data$Price[my.data$US=='Yes'], my.data$Sales[my.data$US=='Yes'], col='red')
+points(my.data$Price[my.data$US=='No'], my.data$Sales[my.data$US=='No'], col='green')
+legend('bottomleft', col=c('red','green'), pch=c(19,19),
+legend=c('US=Yes','US=No'))
+
+
+
+![Dispersion plot Sales Price with US factor RPlot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/56d76f9b-44e6-438e-a9f6-b05503c506e6)
+
+How can we interpret the plot?
+Dispersion plot according to the levels of ShelveLoc
+
+plot(my.data$Price, my.data$Sales, cex.lab=1.2, xlab='Price', ylab='Sales')
+points(my.data$Price[my.data$ShelveLoc=='Bad'],
+my.data$Sales[my.data$ShelveLoc=='Bad'], col='red')
+points(my.data$Price[my.data$ShelveLoc=='Good'],
+my.data$Sales[my.data$ShelveLoc=='Good'], col='green')
+points(my.data$Price[my.data$ShelveLoc=='Medium'],
+my.data$Sales[my.data$ShelveLoc=='Medium'], col='orange')
+legend('bottomleft', col=c('red', 'green', 'orange'), pch=c(19,19, 19),
+legend=c('ShelveLoc=Bad', 'ShelveLoc=Good', 'ShelveLoc=Medium'),
+bty='n', cex=0.8)
+
+![Dispersion plot Sales Price with ShelveLoc factor RPlot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/d9159358-5f56-4a93-adef-ef371cfe26e5)
+
+How can we interpret the plot?
+Variations of Sales with respect to two factors.
+
+boxplot(my.data$Sales~ my.data$US*my.data$ShelveLoc, las=2, cex.axis=0.7,
+xlab='', main='Sales vs US and ShelveLoc')
+
+
+![Boxplot Sales vs US and ShelveLoc RPlot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/cfdd78cb-a3f8-4763-8b05-8d94d1cc1bfe)
+
+boxplot(my.data$Sales~ my.data$Urban*my.data$ShelveLoc, las=2, cex.axis=0.7,
+xlab='', main='Sales vs Urban and ShelveLoc')
+
+
+![Boxplot Sales vs Urban and ShelveLoc RPlot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/176506bc-adcd-43d9-9129-8cdb7bba455a)
+
+boxplot(my.data$Sales~ my.data$Urban*my.data$US, las=2, cex.axis=0.7, xlab='',
+main='Sales vs Urban and US')
+
+![Boxplot Sales vs Urban and US RPlot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/7fbf8e82-fe4c-479b-85c0-da7bbf5c5996)
+
+Interactions seem to be not significant. Why?
+Consider a mosaicplot to see the frequencies of![Mosaicplot Urban vs US Rplot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/b3879a32-3957-4245-a925-112c154e81d6)
+ observations from a couple of factors.
+
+mosaicplot(table(my.data$Urban, my.data$US), main='Urban vs US')
+
+
+![Mosaicplot Urban vs US Rplot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/41df7905-265d-4cc0-a741-6d9ffff44be4)
 
 
 
