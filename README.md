@@ -1,7 +1,7 @@
 # CarseatsDataset_R_Analysis
-Dataset Carseats contains the information about 400 carseats. Data are included in package ISLR.<br>
+I used Dataset Carseats that contains the information about 400 carseats. Data are included in package ISLR.<br>
 <br>
-upload library ISLR
+uploaded library ISLR
 <br>
 library(ISLR)
 <br>
@@ -12,25 +12,25 @@ dimension of the data<br>
 dim(Carseats)<br>
 [1] 400 11 <br> 
 
-variables <br>
+Found variables <br>
 names(Carseats) <br>
 [1] "Sales" "CompPrice" "Income" "Advertising" "Population" "Price" <br>
 [7] "ShelveLoc" "Age" "Education" "Urban" "US" <br>
 
-Extract the variables of interest, namely, Sales, Price, Urban, US, ShelveLoc.<br>
+Extracted the variables of interest, namely, Sales, Price, Urban, US, ShelveLoc.<br>
 
 my.data <- Carseats[, c('Sales', 'Price', 'Urban', 'US', 'ShelveLoc')]<br>
 my.data[1:3,]<br>
 
-Sales Price Urban US ShelveLoc<br>
-1 9.50 120 Yes Yes Bad <br>
-2 11.22 83 Yes Yes Good <br>
-3 10.06 80 Yes Yes Medium <br>
+  Sales    Price   Urban  US  ShelveLoc<br>
+1 9.50     120      Yes  Yes  Bad <br>
+2 11.22     83      Yes  Yes  Good <br>
+3 10.06     80      Yes  Yes  Medium <br>
 
 summary(my.data)<br>
 
-There are no missing data.<br>
-Check whether factors are read correctly.<br>
+There were no missing data.<br>
+Checked whether factors were read correctly.<br>
 <br>
 is.factor(my.data$Urban)<br>
 [1] TRUE<br>
@@ -39,7 +39,7 @@ is.factor(my.data$US)<br>
 is.factor(my.data$ShelveLoc)<br>
 [1] TRUE<br>
 
-Some graphical analyses to evaluate the relationship between the response (Sales) and the covariates.<br>
+Did some graphical analyses to evaluate the relationship between the response (Sales) and the covariates.<br>
 
 par(mfrow=c(1,2))<br>
 hist(my.data$Sales, prob=TRUE)<br>
@@ -54,27 +54,27 @@ plot(my.data$Price, my.data$Sales, cex.lab=1.2, xlab='Price', ylab='Sales')<br>
 ![Dispersion Plot Sales   Price Rplot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/68de7d6b-8a28-4c9a-ad51-4647d8002933)
 
 
-It seems there is an inverse relationship.<br>
+It seemed there were an inverse relationship.<br>
 
 boxplot(my.data$Sales~my.data$Urban, cex.lab=1.2, xlab='Urban', ylab='Sales',cex.names=1.2)<br>
 
 ![Boxplot Sales Urban RPlot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/758544bb-0a15-4d11-b930-9c2b98aaa993)
 
-It seems there are no variations of Sales with respect to Urban, on average.<br>
+It seemed there were no variations of Sales with respect to Urban, on average.<br>
 
 boxplot(my.data$Sales~my.data$US, cex.lab=1.2, xlab='US', ylab='Sales', cex.names=1.2)<br>
 
 ![Boxplot Sales US RPlot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/59abdcca-98ee-4012-b216-d7cd8dd8b20a)
 
 
-Is there anything interesting?<br>
+Was there anything interesting?<br>
 
 boxplot(my.data$Sales~my.data$ShelveLoc, cex.lab=1.2, xlab='ShelveLoc', ylab='Sales', cex.names=1.2)<br>
 
 
 ![Boxplot Sales ShelveLoc RPlot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/72cb7de2-b2e9-4a80-9ebf-d0998f8e1a9c)
 
-Is there anything interesting? Dispersion plot according to the levels of Urban<br>
+Was there anything interesting? Dispersion plot according to the levels of Urban<br>
 
 plot(my.data$Price, my.data$Sales, cex.lab=1.2, xlab='Price', ylab='Sales')<br>
 points(my.data$Price[my.data$Urban=='Yes'], my.data$Sales[my.data$Urban=='Yes'], col=2)<br>
@@ -83,7 +83,7 @@ legend('bottomleft', col=c('red','green'), pch=c(19,19), legend=c('Urban=Yes','U
 
 ![Dispersion Plot Sales   Price Rplot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/172bf853-6617-4d56-ab96-59da8fccef22)
 
-The partial overlapping of the observations belonging to the two groups suggests that there would not be interactions between the covariates.<br>
+The partial overlapping of the observations belonging to the two groups suggested that there would not be interactions between the covariates.<br>
 Dispersion plot according to the levels of US<br>
 
 plot(my.data$Price, my.data$Sales, cex.lab=1.2, xlab='Price', ylab='Sales')<br>
@@ -122,8 +122,8 @@ boxplot(my.data$Sales~ my.data$Urban*my.data$US, las=2, cex.axis=0.7, xlab='', m
 
 ![Boxplot Sales vs Urban and US RPlot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/7fbf8e82-fe4c-479b-85c0-da7bbf5c5996)
 
-Interactions seem to be not significant. Why? <br>
-Consider a mosaicplot to see the frequencies of observations from a couple of factors.<br>
+Interactions seemed to be not significant. Why? <br>
+Considered a mosaicplot to see the frequencies of observations from a couple of factors.<br>
 
 ![Mosaicplot Urban vs US Rplot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/b3879a32-3957-4245-a925-112c154e81d6)
 <br>
@@ -144,8 +144,8 @@ mosaicplot(table(my.data$US, my.data$ShelveLoc), main='US vs ShelveLoc') <br>
 ![Mosaicplot US vs ShelveLoc Rplot](https://github.com/adnantheanalyst/CarseatsDataset_R_Analysis/assets/16821246/adea3320-026e-4b30-bcd6-011a9410d0e4)
 
 
-No relevant variations. <br>
-Estimate the multiple linear regression model, for the moment inserting the interactions <br>
+No relevant variations were found. <br>
+Estimated the multiple linear regression model, for the moment inserting the interactions <br>
 
 model.sales <- lm(Sales~Price + Urban + US + ShelveLoc + Price:ShelveLoc + Price:US + Price:Urban + ShelveLoc:Urban + ShelveLoc:US + US:Urban, data=my.data)<br>
 summary(model.sales)<br>
@@ -153,7 +153,7 @@ summary(model.sales)<br>
 
 
 How do we interpret the coefficients associated to the qualitative variables? <br>
-Try to simplify the model, eliminating some interactions <br>
+Tried to simplify the model, eliminated some interactions <br>
 
 model.sales2 <- update(model.sales, .~.-Price:US) <br>
 summary(model.sales2) <br>
@@ -185,8 +185,6 @@ plot(model.sales8) <br>
 
 confint(model.sales8) <br>
 
-
-
 Predictions of sales for a store in US, when the price of the carseat is 115 $ and when <br>
 ShelveLoc is Medium: <br>
 
@@ -201,11 +199,11 @@ estimate[1] + estimate[2]*115 + estimate[3] <br>
 (Intercept) <br>
 5.839548 <br>
 
-Is it useful to insert a polynomial in Price? <br>
+Was it useful to insert a polynomial in Price? <br>
 
 summary(update(model.sales8, .~.+I(Price^2))) <br>
 
-Suppose we want to change the baseline level for one qualitative variabile. For example, we change the baseline level of ShelveLoc from Bad to Good. There are two possibilities
+Supposed we want to change the baseline level for one qualitative variabile. For example, we change the baseline level of ShelveLoc from Bad to Good. There were two possibilities
 <br>
 first possibility <br>
 new.shelveloc <- my.data$ShelveLoc <br>
@@ -218,5 +216,5 @@ Function contrasts() allows more possibilities to specify contrasts (levels, rel
 model.sales9 <- update(model.sales8, .~. - ShelveLoc + new.shelveloc2) <br>
 summary(model.sales9) <br>
 
-Note that the results are coherent with those from model.sales8, with obvious changes in signs and values of the coefficients associated to the dummies in Shelveloc.<br>
+Note that the results were coherent with those from model.sales8, with obvious changes in signs and values of the coefficients associated to the dummies in Shelveloc.<br>
 
