@@ -2,20 +2,20 @@
 Dataset Carseats contains the information about 400 carseats. Data are included in
 package ISLR.
 
-<!--upload library ISLR-->
+upload library ISLR
 
 library(ISLR)
 
-<!---and the dataset-->
+and the dataset
 data(Carseats)
 
-<!---dimension of the data-->
+dimension of the data
 dim(Carseats)
  [1] 400 11
-<!---variables-->
+variables
 
 names(Carseats) <br>
-[1] "Sales" "CompPrice" "Income" "Advertising" "Population" "Price"
+[1] "Sales" "CompPrice" "Income" "Advertising" "Population" "Price" <br>
 [7] "ShelveLoc" "Age" "Education" "Urban" "US"
 
 Extract the variables of interest, namely, Sales, Price, Urban, US, ShelveLoc.
